@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
 
 const MyProfile = () => {
-  const { user } = useAuth();
+  const { user, toggle } = useAuth();
   const [isAdmin] = useAdmin();
   const axiosSecure = useAxiosSecure();
   const [isDisable, setIsDisable] = useState(true);
@@ -56,16 +56,16 @@ const MyProfile = () => {
   const renderCustomLabel = ({ name, value }) => `${name}: ${value}`;
   // console.log(isAdmin)
   return (
-    <div className="min-h-screen bg-gray-100 px-6 py-8">
+    <div className="min-h-screen px-6 py-8">
       {/* Profile Section */}
-      <div className="bg-white shadow rounded-lg p-6 max-w-4xl mx-auto mb-8">
+      <div className={` shadow rounded-lg p-6 max-w-4xl mx-auto mb-8 `}>
         <div className="flex flex-col items-center">
           <img
             src={user.photoURL}
             alt="Profile"
             className="w-28 h-28 rounded-full mb-4 border-4 border-blue-400"
           />
-          <h1 className="text-2xl font-semibold flex items-center gap-3 text-gray-800">
+          <h1 className="text-2xl font-semibold flex items-center gap-3 ">
             {user.displayName}
             {userDetails?.userAdmin ? (
               <RiAdminFill className="text-green-500" />
@@ -76,7 +76,7 @@ const MyProfile = () => {
               />
             )}
           </h1>
-          <p className="text-gray-600 text-lg "> {user.email}</p>
+          <p className=" text-lg "> {user.email}</p>
         </div>
       </div>
 
@@ -124,20 +124,20 @@ const MyProfile = () => {
 
       {/* Admin Stats */}
       {isAdmin  && statsData && (
-        <div className="bg-white shadow rounded-lg p-6 max-w-4xl mx-auto mb-8">
+        <div className={`shadow rounded-lg p-6 max-w-4xl mx-auto mb-8 `}>
           <h2 className="text-xl font-semibold mb-4 border-b pb-2">Admin Stats</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-gray-50 shadow-sm rounded-lg p-4 text-center">
+            <div className=" shadow-sm rounded-lg p-4 text-center">
               <FaLayerGroup className="text-3xl text-blue-500 mb-2" />
               <h3 className="font-semibold text-lg">Total Posts</h3>
               <p className="text-2xl">{statsData.postsCount}</p>
             </div>
-            <div className="bg-gray-50 shadow-sm rounded-lg p-4 text-center">
+            <div className=" shadow-sm rounded-lg p-4 text-center">
               <TfiComments className="text-3xl text-blue-500 mb-2" />
               <h3 className="font-semibold text-lg">Total Comments</h3>
               <p className="text-2xl">{statsData.commentCount}</p>
             </div>
-            <div className="bg-gray-50 shadow-sm rounded-lg p-4 text-center">
+            <div className="shadow-sm rounded-lg p-4 text-center">
               <FaUsers className="text-3xl text-blue-500 mb-2" />
               <h3 className="font-semibold text-lg">Total Users</h3>
               <p className="text-2xl">{statsData.usersCount}</p>
@@ -150,7 +150,7 @@ const MyProfile = () => {
             </PieChart>
           </div>
           {/* Add Tag Section */}
-          <div className="bg-white shadow rounded-lg p-6 max-w-4xl mx-auto">
+          <div className={`shadow rounded-lg p-6 max-w-4xl mx-auto `}>
             <h2 className="text-xl font-semibold mb-4 border-b pb-2">Add Tag</h2>
             <form onSubmit={handleAddTag}>
               <input

@@ -41,7 +41,7 @@ const AnnouncementForm = () => {
 
     return (
         <div className="p-6 bg-base-200 min-h-screen flex justify-center items-center">
-            <div className="card w-full max-w-md shadow-xl bg-white p-6 rounded-lg">
+            <div className="card w-full max-w-md shadow-xl p-6 rounded-lg">
                 <h2 className="text-2xl font-bold text-center mb-4">Announcement</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
