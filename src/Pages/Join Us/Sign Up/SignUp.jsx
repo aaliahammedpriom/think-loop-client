@@ -82,8 +82,8 @@ const SignUp = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-50 to-blue-100">
-            <div className="card bg-white w-full max-w-md shadow-lg rounded-lg border border-gray-200">
+        <div className="flex justify-center items-center min-h-screen ">
+            <div className="card w-full max-w-md shadow-lg rounded-lg border border-gray-200">
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body space-y-4">
                     <h2 className="text-2xl font-bold text-center text-blue-600">Create Your Account</h2>
 

@@ -69,12 +69,12 @@ const AddPost = () => {
 
   if (userPosts.length < 5 || userDetails.userSubscription || userDetails.userAdmin) {
     return (
-      <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
-        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-800">Create a New Post</h2>
+      <div className="max-w-lg mx-auto p-6 shadow-lg rounded-lg">
+        <h2 className="text-3xl font-semibold mb-6 text-center ">Create a New Post</h2>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Post Title */}
           <div>
-            <label className="block text-lg font-medium mb-2 text-gray-700">Post Title</label>
+            <label className="block text-lg font-medium mb-2 ">Post Title</label>
             <input
               type="text"
               placeholder="Enter post title"
@@ -88,7 +88,7 @@ const AddPost = () => {
 
           {/* Post Description */}
           <div>
-            <label className="block text-lg font-medium mb-2 text-gray-700">Post Description</label>
+            <label className="block text-lg font-medium mb-2 ">Post Description</label>
             <textarea
               placeholder="Enter post description"
               className="w-full px-4 py-3 border rounded-md focus:ring-blue-500 focus:border-blue-500"
@@ -101,7 +101,7 @@ const AddPost = () => {
 
           {/* Tag Selection */}
           <div>
-            <label className="block text-lg font-medium mb-2 text-gray-700">Tag</label>
+            <label className="block text-lg font-medium mb-2 ">Tag</label>
             <Select
               options={tagOption}
               onChange={handleTagChange}

@@ -81,7 +81,7 @@ const MyProfile = () => {
       </div>
 
       {/* User Posts */}
-      {!isAdmin && <div className="bg-white shadow rounded-lg p-6 max-w-4xl mx-auto mb-8">
+      {!isAdmin && <div className=" shadow rounded-lg p-6 max-w-4xl mx-auto mb-8">
         <h2 className="text-xl font-semibold mb-4 border-b pb-2">
           My Recent Posts
         </h2>
@@ -90,12 +90,12 @@ const MyProfile = () => {
             {userPosts.map((post, idx) => (
               <div
                 key={idx}
-                className="bg-gray-50 shadow-sm rounded-lg p-4 hover:shadow-md transition"
+                className=" shadow-sm rounded-lg p-4 hover:shadow-md transition"
               >
-                <h3 className="text-lg font-semibold mb-2 text-gray-800">
+                <h3 className="text-lg font-semibold mb-2 ">
                   {post.postTitle}
                 </h3>
-                <p className="text-sm text-gray-600 mb-2">{post.postDescription}</p>
+                <p className="text-sm  mb-2">{post.postDescription}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-500">
                     {new Date(post.postTime).toLocaleString()}

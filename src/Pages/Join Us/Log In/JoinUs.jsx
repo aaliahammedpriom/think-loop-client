@@ -54,8 +54,8 @@ const JoinUs = () => {
     };
 
     return (
-        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-50 to-blue-100">
-            <div className="card bg-white w-full max-w-sm p-6 shadow-lg rounded-lg">
+        <div className="flex justify-center items-center min-h-screen ">
+            <div className="card  w-full max-w-sm p-6 shadow-lg rounded-lg">
                 <h1 className="text-2xl font-semibold text-center text-blue-700 mb-4">Join Us</h1>
                 <form onSubmit={handleLogin} className="card-body p-0">
                     <div className="form-control mb-4">

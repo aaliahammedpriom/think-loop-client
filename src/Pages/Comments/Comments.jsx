@@ -151,9 +151,9 @@ const Comments = () => {
         <div className="max-w-2xl mx-auto flex flex-col gap-3">
             {/* post info */}
             <div >
-                <h2 className="text-xl font-semibold mb-4">My Recent Posts</h2>
+                {/* <h2 className="text-xl font-semibold mb-4">My Recent Posts</h2> */}
                 <div className="space-y-6">
-                    <div className="bg-white shadow-md rounded-lg p-2 flex flex-col gap-4"
+                    <div className="shadow-md rounded-lg p-2 flex flex-col gap-4"
                     >
                         <div className="flex items-center gap-4">
                             <img
@@ -163,7 +163,7 @@ const Comments = () => {
                             />
                             <div>
                                 <h3 className="font-medium">{postDetails?.authorName}</h3>
-                                <p className="text-sm text-gray-500">
+                                <p className="text-sm ">
                                     {/* Convert postTime to local time */}
                                     {new Date(postDetails?.postTime).toLocaleString()}
                                 </p>
@@ -175,7 +175,7 @@ const Comments = () => {
                             <span className="bg-gray-200 text-gray-600 text-sm px-3 py-1 rounded-full">
                                 #{postDetails?.postTag}
                             </span>
-                            <p className="text-gray-700">{postDetails?.postDescription}</p>
+                            <p className="">{postDetails?.postDescription}</p>
 
                         </div>
 
@@ -208,7 +208,7 @@ const Comments = () => {
 
             {/* comment form */}
             {!(location.pathname.includes('/dashboard')) && <form onSubmit={(e) => handleCommentSubmit(e, postDetails)}>
-                <label className="block text-gray-700 font-medium mb-1">
+                <label className="block  font-medium mb-1">
                     Comment
                 </label>
                 <textarea
@@ -227,7 +227,7 @@ const Comments = () => {
                     <div className="overflow-x-auto">
                         <table className="table w-full border border-gray-300">
                             <thead>
-                                <tr className="bg-gray-200 text-left px-4 py-2">
+                                <tr className="text-left px-4 py-2">
                                     <th >Comments</th>
                                     {
                                         (postDetails?.authorEmail === user?.email) && <th></th>
