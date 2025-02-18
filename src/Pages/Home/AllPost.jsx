@@ -4,9 +4,10 @@ import PostCart from '../Post Cart/PostCart';
 import Loading from '../Shared/Loading';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import useAuth from '../../Hooks/useAuth';
 
 const AllPost = ({ search, poularity }) => {
-    
+    const { toggle} = useAuth();
     const axiosPublic = useAxiosPublic();
     const [itemsPerPage, setItemsPerPage] = useState(8);
     const [currentPage, setCurrentPage] = useState(0);
@@ -31,7 +32,7 @@ const AllPost = ({ search, poularity }) => {
 
     if (posts) {
         return (
-            <div className='min-h-screen bg-gray-100 p-6'>
+            <div div className={`min-h-screen p-6 ${toggle ? 'bg-dark': 'bg-gray-100'}`}>
                 <div className="max-w-full mx-auto">
                     <div className="text-center mb-6">
                         <span className="text-lg font-semibold">Results Found: </span>
@@ -42,11 +43,11 @@ const AllPost = ({ search, poularity }) => {
                             <PostCart key={post._id} post={post} />
                         ))}
                     </div>
-                    <div className='flex flex-wrap justify-center mt-10 gap-1'>
-                        <button onClick={() => { (pages.includes(currentPage - 1)) && setCurrentPage(currentPage - 1) }} className='btn bg-blue-400 btn-sm'> Previous Page</button>
-                        {pages.map(page => <button key={page} onClick={() => { setCurrentPage(page) }} className={` btn btn-sm ${(currentPage === page) ? 'bg-blue-400 border-2 border-solid border-blue-800' : 'bg-blue-400'}`}>{page + 1}</button>)
+                    <div className='flex flex-wrap justify-center mt-10 gap-1 '>
+                        <button onClick={() => { (pages.includes(currentPage - 1)) && setCurrentPage(currentPage - 1) }} className={`btn bg-blue-400 btn-sm ${toggle? "text-white": 'text-black'}`}> Previous Page</button>
+                        {pages.map(page => <button key={page} onClick={() => { setCurrentPage(page) }} className={` btn btn-sm ${toggle? "text-white": 'text-black'} ${(currentPage === page) ? 'bg-blue-400 border-2 border-solid border-blue-800' : 'bg-blue-400'} `}>{page + 1}</button>)
                         }
-                        <button onClick={() => { (pages.includes(currentPage + 1)) && setCurrentPage(currentPage + 1) }} className='btn bg-blue-400 btn-sm'> Next Page</button>
+                        <button onClick={() => { (pages.includes(currentPage + 1)) && setCurrentPage(currentPage + 1) }} className={`btn bg-blue-400 btn-sm ${toggle? "text-white": 'text-black'}`}> Next Page</button>
                     </div>
                 </div>
             </div>

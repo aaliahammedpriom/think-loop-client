@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/useAuth';
 import CommentDescription from '../Comments/CommentDescription';
 
 const Announcement = () => {
-  const { announcementsLength, setAnnouncementsLength } = useAuth();
+  const { announcementsLength, setAnnouncementsLength, toggle } = useAuth();
   const [anouncementHide, setAnouncementHide] = useState(false);
   const axiosPublic = useAxiosSecure();
 
@@ -76,8 +76,8 @@ const Announcement = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-xl font-semibold text-center text-gray-700">
+    <div className={`max-w-md mx-auto p-6  shadow-lg rounded-lg ${toggle? "bg-dark": ''}`}>
+      <h2 className="text-xl font-semibold text-center ">
         No Announcements Available
       </h2>
     </div>

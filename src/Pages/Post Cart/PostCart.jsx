@@ -4,8 +4,10 @@ import { FaCommentDots, FaShare } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import useAuth from '../../Hooks/useAuth';
 
 const PostCart = ({ post }) => {
+    const {toggle} = useAuth();
     const [commentCount , setCommentCount] = useState(0)
     const axiosPublic = useAxiosSecure();
     useEffect(()=>{
@@ -18,7 +20,7 @@ const PostCart = ({ post }) => {
     return (
         <div
             key={post.id}
-            className="bg-white shadow-md rounded-lg p-2 flex flex-col gap-4"
+            className= {`shadow-md rounded-lg p-2 flex flex-col gap-4 ${toggle? 'bg-red': "bg-gray-100"}`}
         >
             {/* Author Info */}
             <div className="flex items-center gap-4">
