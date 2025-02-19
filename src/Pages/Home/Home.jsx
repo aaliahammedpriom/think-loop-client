@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import Loading from '../Shared/Loading';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import ReviewSlider from './ReviewSlider';
+import ForumTrivia from './ForumTrivia';
 
 const Home = () => {
     const axiosPublic = useAxiosPublic();
@@ -74,6 +75,7 @@ const Home = () => {
             </section>
             <section>
                 <ReviewSlider></ReviewSlider>
+                <ForumTrivia></ForumTrivia>
             </section>
         </div>
     );
