@@ -4,6 +4,7 @@ import AllPost from './AllPost';
 import { useQuery } from '@tanstack/react-query';
 import Loading from '../Shared/Loading';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import ReviewSlider from './ReviewSlider';
 
 const Home = () => {
     const axiosPublic = useAxiosPublic();
@@ -70,6 +71,9 @@ const Home = () => {
             <section>
                 <AllPost search={search} poularity={poularity}></AllPost>
 
+            </section>
+            <section>
+                <ReviewSlider></ReviewSlider>
             </section>
         </div>
     );
