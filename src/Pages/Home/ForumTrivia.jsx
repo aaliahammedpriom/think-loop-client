@@ -50,13 +50,13 @@ const ForumTrivia = () => {
           {trivia.map((item, index) => (
             <motion.li
               key={index}
-              className="p-4 rounded-lg shadow hover:shadow-lg transition bg-gray-100"
+              className="p-4 rounded-lg shadow hover:shadow-lg transition  "
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <p className="text-lg text-gray-700 font-medium">{item.fact}</p>
+              <p className="text-lg  font-medium">{item.fact}</p>
             </motion.li>
           ))}
         </ul>

@@ -32,7 +32,7 @@ const AllPost = ({ search, poularity }) => {
 
     if (posts) {
         return (
-            <div div className={`min-h-screen p-6 ${toggle ? 'bg-dark': 'bg-gray-100'}`}>
+            <div div className={`min-h-screen p-6 ${toggle ? 'bg-dark': ''}`}>
                 <div className="max-w-full mx-auto">
                     <div className="text-center mb-6">
                         <span className="text-lg font-semibold">Results Found: </span>

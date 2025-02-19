@@ -6,6 +6,9 @@ import Loading from '../Shared/Loading';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 import ReviewSlider from './ReviewSlider';
 import ForumTrivia from './ForumTrivia';
+import ForumFaq from './ForumFaq';
+import ContactUs from './ContactUs';
+import Legal from './Legal';
 
 const Home = () => {
     const axiosPublic = useAxiosPublic();
@@ -76,6 +79,9 @@ const Home = () => {
             <section>
                 <ReviewSlider></ReviewSlider>
                 <ForumTrivia></ForumTrivia>
+                <ForumFaq></ForumFaq>
+                <ContactUs></ContactUs>
+                <Legal></Legal>
             </section>
         </div>
     );
